@@ -120,14 +120,16 @@ namespace MvvmCross.ExoPlayer.Droid.Player
                 var timestampAdjusterProvider = new PtsTimestampAdjusterProvider();
 
                 var dataSource = new DefaultUriDataSource(_context, bandwidthMeter, _userAgent);
-				var chunkSource = new HlsChunkSource(true
-                    , dataSource
-                    , _url
-                    , manifest
-                    , DefaultHlsTrackSelector.NewDefaultInstance(_context)
-                    , bandwidthMeter
-                    , timestampAdjusterProvider
-                    , HlsChunkSource.AdaptiveModeSplice);
+                
+			    var chunkSource = new HlsChunkSource(
+                    true,
+                    dataSource,
+                    manifest,
+                    DefaultHlsTrackSelector.NewDefaultInstance(_context),
+                    bandwidthMeter,
+                    timestampAdjusterProvider,
+                    HlsChunkSource.AdaptiveModeSplice);
+                
 				var sampleSource = new HlsSampleSource(chunkSource
                     , loadControl
                     , BufferSegments*BufferSegmentSize
