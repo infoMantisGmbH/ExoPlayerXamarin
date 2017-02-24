@@ -33,10 +33,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="ExoPlayer, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Xam.Plugins.Android.ExoPlayer.1.5.8\lib\MonoAndroid\ExoPlayer.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="Mono.Android" />
     <Reference Include="Mono.Android.Export" />
     <Reference Include="mscorlib" />
@@ -98,6 +94,10 @@
   </Target>
   -->
   <ItemGroup>
+    <ProjectReference Include="..\..\..\ExoPlayer\ExoPlayer.csproj">
+      <Project>{0b871c50-6d5d-45d0-b32d-84e25adb869a}</Project>
+      <Name>ExoPlayer</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ExoPlayer.Core\ExoPlayer.Core.csproj">
       <Project>{BF2EF832-FF56-4342-BB4D-A95C908B3CB7}</Project>
       <Name>ExoPlayer.Core</Name>
